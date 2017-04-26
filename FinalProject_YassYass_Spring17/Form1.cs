@@ -17,9 +17,38 @@ namespace FinalProject_YassYass_Spring17
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void starter()
         {
+            
+        }
 
+        private void BackClick(object sender, EventArgs e)
+        {
+            webBrowser1.GoBack();
+        }
+
+        private void BTNnext_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoForward();
+        }
+
+        private void UrlBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if key "Enter" Pressed it will trigger event here
+            if (e.KeyChar == (Char) ConsoleKey.Enter)
+            {
+                webBrowser1.Navigate(UrlBox.Text);
+            }
+        }
+
+        private void BTNgo_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(UrlBox.Text);
+        }
+
+        private void BTNHome_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoHome();
         }
     }
 }

@@ -28,41 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BTNBack = new System.Windows.Forms.Button();
+            this.BTNnext = new System.Windows.Forms.Button();
+            this.UrlBox = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.label1 = new System.Windows.Forms.Label();
+            this.BTNgo = new System.Windows.Forms.Button();
+            this.BTNHome = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // BTNBack
             // 
-            this.button1.Location = new System.Drawing.Point(0, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Previous";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BTNBack.BackgroundImage = global::FinalProject_YassYass_Spring17.Properties.Resources.back;
+            this.BTNBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTNBack.FlatAppearance.BorderSize = 0;
+            this.BTNBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.BTNBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNBack.Location = new System.Drawing.Point(0, -11);
+            this.BTNBack.Name = "BTNBack";
+            this.BTNBack.Size = new System.Drawing.Size(73, 62);
+            this.BTNBack.TabIndex = 0;
+            this.BTNBack.UseVisualStyleBackColor = true;
+            this.BTNBack.Click += new System.EventHandler(this.BackClick);
             // 
-            // button2
+            // BTNnext
             // 
-            this.button2.Location = new System.Drawing.Point(108, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Next";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTNnext.BackgroundImage = global::FinalProject_YassYass_Spring17.Properties.Resources.forward;
+            this.BTNnext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTNnext.FlatAppearance.BorderSize = 0;
+            this.BTNnext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNnext.Location = new System.Drawing.Point(137, -16);
+            this.BTNnext.Name = "BTNnext";
+            this.BTNnext.Size = new System.Drawing.Size(75, 73);
+            this.BTNnext.TabIndex = 1;
+            this.BTNnext.UseVisualStyleBackColor = true;
+            this.BTNnext.Click += new System.EventHandler(this.BTNnext_Click);
             // 
-            // textBox1
+            // UrlBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(234, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(766, 20);
-            this.textBox1.TabIndex = 2;
+            this.UrlBox.Location = new System.Drawing.Point(218, 11);
+            this.UrlBox.Name = "UrlBox";
+            this.UrlBox.Size = new System.Drawing.Size(741, 20);
+            this.UrlBox.TabIndex = 2;
+            this.UrlBox.Text = "http://";
+            this.UrlBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UrlBox_KeyPress);
             // 
             // toolStrip1
             // 
@@ -82,32 +93,53 @@
             // 
             // webBrowser1
             // 
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser1.Location = new System.Drawing.Point(0, 39);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1166, 686);
             this.webBrowser1.TabIndex = 5;
             // 
-            // label1
+            // BTNgo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1072, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "About";
+            this.BTNgo.BackgroundImage = global::FinalProject_YassYass_Spring17.Properties.Resources.go;
+            this.BTNgo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTNgo.FlatAppearance.BorderSize = 0;
+            this.BTNgo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNgo.Location = new System.Drawing.Point(980, -3);
+            this.BTNgo.Name = "BTNgo";
+            this.BTNgo.Size = new System.Drawing.Size(47, 42);
+            this.BTNgo.TabIndex = 7;
+            this.BTNgo.UseVisualStyleBackColor = true;
+            this.BTNgo.Click += new System.EventHandler(this.BTNgo_Click);
+            // 
+            // BTNHome
+            // 
+            this.BTNHome.BackgroundImage = global::FinalProject_YassYass_Spring17.Properties.Resources.home;
+            this.BTNHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTNHome.FlatAppearance.BorderSize = 0;
+            this.BTNHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNHome.Location = new System.Drawing.Point(81, 1);
+            this.BTNHome.Name = "BTNHome";
+            this.BTNHome.Size = new System.Drawing.Size(50, 37);
+            this.BTNHome.TabIndex = 8;
+            this.BTNHome.UseVisualStyleBackColor = false;
+            this.BTNHome.Click += new System.EventHandler(this.BTNHome_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 753);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BTNHome);
+            this.Controls.Add(this.BTNgo);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.UrlBox);
+            this.Controls.Add(this.BTNnext);
+            this.Controls.Add(this.BTNBack);
             this.Name = "Form1";
             this.Text = "Form1";
             this.toolStrip1.ResumeLayout(false);
@@ -119,13 +151,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button BTNBack;
+        private System.Windows.Forms.Button BTNnext;
+        private System.Windows.Forms.TextBox UrlBox;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BTNgo;
+        private System.Windows.Forms.Button BTNHome;
     }
 }
 
