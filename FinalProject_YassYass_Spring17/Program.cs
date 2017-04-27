@@ -16,7 +16,7 @@ namespace FinalProject_YassYass_Spring17
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new BrowserForm());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace FinalProject_YassYass_Spring17
 {
-    partial class Form1
+    partial class BrowserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserForm));
             this.UrlBox = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
@@ -39,6 +39,7 @@
             this.BTNgo = new System.Windows.Forms.Button();
             this.BTNnext = new System.Windows.Forms.Button();
             this.BTNBack = new System.Windows.Forms.Button();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,8 @@
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1});
+            this.toolStripProgressBar1,
+            this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 728);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1166, 25);
@@ -80,6 +82,8 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1166, 686);
             this.webBrowser1.TabIndex = 5;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+            this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
             // 
             // BTNsetting
             // 
@@ -162,6 +166,12 @@
             this.BTNBack.UseVisualStyleBackColor = true;
             this.BTNBack.Click += new System.EventHandler(this.BackClick);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel1.Text = "toolStripLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +209,7 @@
         private System.Windows.Forms.Button BTNHome;
         private System.Windows.Forms.Button BTNrefresh;
         private System.Windows.Forms.Button BTNsetting;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
 

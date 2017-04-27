@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace FinalProject_YassYass_Spring17
 {
-    public partial class Form1 : Form
+    public partial class BrowserForm : Form
     {
-        public Form1()
+        public BrowserForm()
         {
             InitializeComponent();
-            homepage();
+            
         }
 
+        #region Defaults
+        
         //This assigns homepage to the webbrowser and navigates to it when program starts
         private void homepage()
         {
@@ -31,6 +33,7 @@ namespace FinalProject_YassYass_Spring17
         //to webBrowser widget and navigates to webpage
         private void go2()
         {
+            toolStripLabel1.Text = "Loading";
             webBrowser1.Navigate(UrlBox.Text);
         }
 
@@ -38,8 +41,15 @@ namespace FinalProject_YassYass_Spring17
         {
             
         }
+        //This will load anything when the application starts
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            homepage();
+        }
+        #endregion
 
-        #region ButtonsEvents
+
+        #region Events
 
         //This method is the go back button, it triggers when pressed and goes to previous page
         private void BackClick(object sender, EventArgs e)
@@ -79,13 +89,24 @@ namespace FinalProject_YassYass_Spring17
         {
             webBrowser1.Refresh();
         }
-        #endregion
 
-        private void Form1_Load(object sender, EventArgs e)
+
+
+        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
-
+            if (e.CurrentProgress > 0 & e.MaximumProgress > 0)
+            {
+                toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
+            }
         }
 
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            toolStripLabel1.Text = "Finished";
+        }
+
+        #endregion
 
     }
 }
