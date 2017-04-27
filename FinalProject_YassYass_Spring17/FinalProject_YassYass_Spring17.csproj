@@ -80,19 +80,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\back.png" />
+    <None Include="Resources\back1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\forward.png" />
+    <None Include="Resources\forward1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\go.png" />
+    <None Include="Resources\go1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\refresh.png" />
+    <None Include="Resources\home1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

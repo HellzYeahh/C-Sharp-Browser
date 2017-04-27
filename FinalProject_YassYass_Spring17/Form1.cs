@@ -15,40 +15,68 @@ namespace FinalProject_YassYass_Spring17
         public Form1()
         {
             InitializeComponent();
+            homepage();
         }
 
-        private void starter()
+        //This assigns homepage to the webbrowser and navigates to it when program starts
+        private void homepage()
+        {
+            
+           String homepage = UrlBox.Text = "http://www.google.com";
+           webBrowser1.Navigate(homepage);
+            
+        }
+
+        //this method that enters gives address put in URLBOX 
+        //to webBrowser widget and navigates to webpage
+        private void go2()
+        {
+            webBrowser1.Navigate(UrlBox.Text);
+        }
+
+        private void Progressbar()
         {
             
         }
 
+        #region ButtonsEvents
+
+        //This method is the go back button, it triggers when pressed and goes to previous page
         private void BackClick(object sender, EventArgs e)
         {
             webBrowser1.GoBack();
         }
 
+        //This button event goes back to previous page of previous page
         private void BTNnext_Click(object sender, EventArgs e)
         {
             webBrowser1.GoForward();
         }
 
+        //if key "Enter" Pressed it will trigger event here
         private void UrlBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if key "Enter" Pressed it will trigger event here
-            if (e.KeyChar == (Char) ConsoleKey.Enter)
+            
+            if (e.KeyChar == (Char)ConsoleKey.Enter)
             {
-                webBrowser1.Navigate(UrlBox.Text);
+                go2();
             }
         }
 
+        //This is event for navigation button that used if user doesnt 
+        //want to press enter when address is entered
         private void BTNgo_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(UrlBox.Text);
+            go2();
         }
 
+        //When Home button clicked it will go to the Home page
         private void BTNHome_Click(object sender, EventArgs e)
         {
-            webBrowser1.GoHome();
+            homepage();
         }
+
+        #endregion
+
     }
 }
