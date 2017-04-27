@@ -75,8 +75,17 @@ namespace FinalProject_YassYass_Spring17
         {
             homepage();
         }
-
+        private void BTNrefresh_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Refresh();
+        }
         #endregion
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

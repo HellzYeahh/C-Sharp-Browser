@@ -33,6 +33,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.BTNsetting = new System.Windows.Forms.Button();
+            this.BTNrefresh = new System.Windows.Forms.Button();
             this.BTNHome = new System.Windows.Forms.Button();
             this.BTNgo = new System.Windows.Forms.Button();
             this.BTNnext = new System.Windows.Forms.Button();
@@ -47,7 +49,7 @@
             this.UrlBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UrlBox.Location = new System.Drawing.Point(157, 2);
             this.UrlBox.Name = "UrlBox";
-            this.UrlBox.Size = new System.Drawing.Size(741, 29);
+            this.UrlBox.Size = new System.Drawing.Size(809, 29);
             this.UrlBox.TabIndex = 2;
             this.UrlBox.Text = "http://";
             this.UrlBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UrlBox_KeyPress);
@@ -79,6 +81,33 @@
             this.webBrowser1.Size = new System.Drawing.Size(1166, 686);
             this.webBrowser1.TabIndex = 5;
             // 
+            // BTNsetting
+            // 
+            this.BTNsetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTNsetting.BackgroundImage = global::FinalProject_YassYass_Spring17.Properties.Resources.setting;
+            this.BTNsetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTNsetting.FlatAppearance.BorderSize = 0;
+            this.BTNsetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNsetting.Location = new System.Drawing.Point(1055, 0);
+            this.BTNsetting.Name = "BTNsetting";
+            this.BTNsetting.Size = new System.Drawing.Size(33, 35);
+            this.BTNsetting.TabIndex = 10;
+            this.BTNsetting.UseVisualStyleBackColor = true;
+            // 
+            // BTNrefresh
+            // 
+            this.BTNrefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTNrefresh.BackgroundImage = global::FinalProject_YassYass_Spring17.Properties.Resources.refresh;
+            this.BTNrefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTNrefresh.FlatAppearance.BorderSize = 0;
+            this.BTNrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNrefresh.Location = new System.Drawing.Point(1014, 1);
+            this.BTNrefresh.Name = "BTNrefresh";
+            this.BTNrefresh.Size = new System.Drawing.Size(35, 34);
+            this.BTNrefresh.TabIndex = 9;
+            this.BTNrefresh.UseVisualStyleBackColor = true;
+            this.BTNrefresh.Click += new System.EventHandler(this.BTNrefresh_Click);
+            // 
             // BTNHome
             // 
             this.BTNHome.BackgroundImage = global::FinalProject_YassYass_Spring17.Properties.Resources.home1;
@@ -99,9 +128,9 @@
             this.BTNgo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BTNgo.FlatAppearance.BorderSize = 0;
             this.BTNgo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNgo.Location = new System.Drawing.Point(904, 0);
+            this.BTNgo.Location = new System.Drawing.Point(972, 0);
             this.BTNgo.Name = "BTNgo";
-            this.BTNgo.Size = new System.Drawing.Size(36, 33);
+            this.BTNgo.Size = new System.Drawing.Size(36, 35);
             this.BTNgo.TabIndex = 7;
             this.BTNgo.UseVisualStyleBackColor = true;
             this.BTNgo.Click += new System.EventHandler(this.BTNgo_Click);
@@ -138,6 +167,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 753);
+            this.Controls.Add(this.BTNsetting);
+            this.Controls.Add(this.BTNrefresh);
             this.Controls.Add(this.BTNHome);
             this.Controls.Add(this.BTNgo);
             this.Controls.Add(this.webBrowser1);
@@ -148,6 +179,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -165,6 +197,8 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Button BTNgo;
         private System.Windows.Forms.Button BTNHome;
+        private System.Windows.Forms.Button BTNrefresh;
+        private System.Windows.Forms.Button BTNsetting;
     }
 }
 
