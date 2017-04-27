@@ -46,6 +46,7 @@ namespace FinalProject_YassYass_Spring17
         {
             homepage();
         }
+
         #endregion
 
 
@@ -91,7 +92,7 @@ namespace FinalProject_YassYass_Spring17
         }
 
 
-
+        //This will display and track web page progress of loading and put in progress bar.
         private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
             if (e.CurrentProgress > 0 & e.MaximumProgress > 0)
@@ -100,7 +101,7 @@ namespace FinalProject_YassYass_Spring17
             }
         }
 
-
+        //When page done loading event will trigger
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             toolStripLabel1.Text = "Finished";
