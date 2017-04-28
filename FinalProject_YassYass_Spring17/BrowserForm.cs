@@ -15,16 +15,22 @@ namespace FinalProject_YassYass_Spring17
         public BrowserForm()
         {
             InitializeComponent();
+
+
             
         }
+        defaultsSetting dflt = new defaultsSetting();
+
+        
 
         #region Defaults
         
         //This assigns homepage to the webbrowser and navigates to it when program starts
         private void homepage()
         {
+
             
-           String homepage = UrlBox.Text = "http://www.google.com";
+           String homepage = UrlBox.Text = (dflt.Defaultpage);
            webBrowser1.Navigate(homepage);
             
         }
@@ -45,6 +51,7 @@ namespace FinalProject_YassYass_Spring17
         private void Form1_Load(object sender, EventArgs e)
         {
             homepage();
+            
         }
 
         #endregion
@@ -98,6 +105,12 @@ namespace FinalProject_YassYass_Spring17
             if (e.CurrentProgress > 0 & e.MaximumProgress > 0)
             {
                 toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
+                toolStripLabel1.Text = "Loading";
+            }
+
+            else if(e.CurrentProgress > 100 & e.MaximumProgress > 100)
+            {
+                toolStripLabel1.Text = "Loading...";
             }
         }
 
@@ -107,7 +120,26 @@ namespace FinalProject_YassYass_Spring17
             toolStripLabel1.Text = "Finished";
         }
 
+        //Easter Egg
+        private void toolStripProgressBar1_Click(object sender, EventArgs e)
+        {
+            foreach (HtmlElement image in webBrowser1.Document.Images)
+            {
+                image.SetAttribute("src", "https://s-media-cache-ak0.pinimg.com/originals/6e/d7/b0/6ed7b0842f02db2f93018561c1c55d9c.png");
+            }
+        }
+
+        private void BTNsetting_Click(object sender, EventArgs e)
+        {
+            Form1 frmSetting = new Form1();
+
+            frmSetting.Show();
+
+
+        }
+
         #endregion
+
 
     }
 }

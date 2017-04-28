@@ -32,6 +32,7 @@
             this.UrlBox = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.BTNsetting = new System.Windows.Forms.Button();
             this.BTNrefresh = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.BTNgo = new System.Windows.Forms.Button();
             this.BTNnext = new System.Windows.Forms.Button();
             this.BTNBack = new System.Windows.Forms.Button();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,13 @@
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 22);
+            this.toolStripProgressBar1.Click += new System.EventHandler(this.toolStripProgressBar1_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // webBrowser1
             // 
@@ -97,6 +104,7 @@
             this.BTNsetting.Size = new System.Drawing.Size(33, 35);
             this.BTNsetting.TabIndex = 10;
             this.BTNsetting.UseVisualStyleBackColor = true;
+            this.BTNsetting.Click += new System.EventHandler(this.BTNsetting_Click);
             // 
             // BTNrefresh
             // 
@@ -166,13 +174,7 @@
             this.BTNBack.UseVisualStyleBackColor = true;
             this.BTNBack.Click += new System.EventHandler(this.BackClick);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
-            this.toolStripLabel1.Text = "toolStripLabel1";
-            // 
-            // Form1
+            // BrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,8 +189,8 @@
             this.Controls.Add(this.BTNnext);
             this.Controls.Add(this.BTNBack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "BrowserForm";
+            this.Text = "Simple Browser by Yass Yass";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
