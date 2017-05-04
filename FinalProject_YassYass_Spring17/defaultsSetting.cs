@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace FinalProject_YassYass_Spring17
 {
-    class defaultsSetting
+    static class defaultsSetting
     {
-        private string defaultpage;
-        public string Defaultpage
+        private static string defaultpage;
+        public static string Defaultpage
         {
+            //get and set default webpage
             get
             {
-                return defaultpage = "www.google.com";
+                return defaultpage;
             }
             set { defaultpage = value; }
         }

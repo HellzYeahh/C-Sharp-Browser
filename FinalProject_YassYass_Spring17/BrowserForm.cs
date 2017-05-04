@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace FinalProject_YassYass_Spring17
@@ -15,28 +16,23 @@ namespace FinalProject_YassYass_Spring17
         public BrowserForm()
         {
             InitializeComponent();
-
-
             
         }
-        defaultsSetting dflt = new defaultsSetting();
-
         
 
         #region Defaults
         
-        //This assigns homepage to the webbrowser and navigates to it when program starts
+        //This method assigns homepage to the webbrowser and navigates to it when program starts or method called
         private void homepage()
         {
 
             
-           String homepage = UrlBox.Text = (dflt.Defaultpage);
+           String homepage = UrlBox.Text = (defaultsSetting.Defaultpage);
            webBrowser1.Navigate(homepage);
             
         }
 
-        //this method that enters gives address put in URLBOX 
-        //to webBrowser widget and navigates to webpage
+        // It is a method when called it will navigate to that page and change status of the progress bar to loading
         private void go2()
         {
             toolStripLabel1.Text = "Loading";
@@ -47,11 +43,13 @@ namespace FinalProject_YassYass_Spring17
         {
             
         }
-        //This will load anything when the application starts
+        //This will load or default anything programmed when the application starts
         private void Form1_Load(object sender, EventArgs e)
         {
-            homepage();
             
+            webBrowser1.Navigate(defaultsSetting.Defaultpage = "http://www.google.com");
+            UrlBox.Text = defaultsSetting.Defaultpage;
+
         }
 
         #endregion
@@ -59,19 +57,26 @@ namespace FinalProject_YassYass_Spring17
 
         #region Events
 
-        //This method is the go back button, it triggers when pressed and goes to previous page
+        //This method is the go back button, it triggers when clicked it will go back to previous page
         private void BackClick(object sender, EventArgs e)
         {
+            
             webBrowser1.GoBack();
+            
         }
 
-        //This button event goes back to previous page of previous page
+  
+        //This Forward button is clicked webBrowser widget will go back to previous page of the previous page
         private void BTNnext_Click(object sender, EventArgs e)
         {
+           
             webBrowser1.GoForward();
+            
+
         }
 
-        //if key "Enter" Pressed it will trigger event here
+        // This method will look for Key pressed on the URLbox widget and do even with it
+        //For example if "Eneter" key is pressed it will navigate to that page
         private void UrlBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             
@@ -81,25 +86,27 @@ namespace FinalProject_YassYass_Spring17
             }
         }
 
-        //This is event for navigation button that used if user doesnt 
-        //want to press enter when address is entered
+        //This is navigation button instead of pressing "Enter" 
+        //You click Navigate button and it will go to that page
         private void BTNgo_Click(object sender, EventArgs e)
         {
             go2();
         }
 
-        //When Home button clicked it will go to the Home page
+        //When Home button clicked it will navigate to the the Home page
         private void BTNHome_Click(object sender, EventArgs e)
         {
             homepage();
         }
+
+        //It will refresh the page when refresh button is clicked, basically navigating to the same page again
         private void BTNrefresh_Click(object sender, EventArgs e)
         {
             webBrowser1.Refresh();
         }
 
 
-        //This will display and track web page progress of loading and put in progress bar.
+        //This will display and track web page progress of loading and will display it on the progress bar object/widget.
         private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
             if (e.CurrentProgress > 0 & e.MaximumProgress > 0)
@@ -114,10 +121,12 @@ namespace FinalProject_YassYass_Spring17
             }
         }
 
-        //When page done loading event will trigger
+        //This method listens to the webrowser object when page done loading it will trigger events
+        //For example when webpage done loading set text to something or progress bar status
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             toolStripLabel1.Text = "Finished";
+            UrlBox.Text = webBrowser1.Url.AbsoluteUri;
         }
 
         //Easter Egg
